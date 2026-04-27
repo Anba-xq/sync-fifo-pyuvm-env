@@ -33,6 +33,37 @@ make TESTCASE=test_case0
 # 运行读写并发压力测试，并开启覆盖率收集
 make TESTCASE=test_case1
 
-<img width="1289" height="675" alt="sim" src="https://github.com/user-attachments/assets/2818aa5b-0c07-4e86-a953-74a4d63d5029" />
+
+### 仿真结果
+4680.00ns DEBUG    ..ek3/pyuvm_sync_fifo/main.py(134) [uvm_test_top.env.rd_mon]: 👀 [RdMonitor] 抓取到延迟一拍的新鲜数据: 202
+  4680.00ns INFO     ..ek3/pyuvm_sync_fifo/main.py(178) [uvm_test_top.env.scb]: ✅ PASS: 成功读出预期数据 202
+  4690.00ns INFO     ..eek3/pyuvm_sync_fifo/main.py(59) [uvm_test_top.env.wr_drv]: 📤 [WrDriver] 发起写入: 154
+  4690.00ns INFO     ..eek3/pyuvm_sync_fifo/main.py(79) [uvm_test_top.env.wr_mon]: 👀 [WrMonitor] 抓取到成功写入: 154
+  4690.00ns INFO     ..ek3/pyuvm_sync_fifo/main.py(167) [uvm_test_top.env.scb]: 📦 [Scoreboard] 记录写入数据: 154，当前库存: [231, 56, 154]
+  4710.00ns INFO     ..eek3/pyuvm_sync_fifo/main.py(59) [uvm_test_top.env.wr_drv]: 📤 [WrDriver] 发起写入: 57
+  4710.00ns INFO     ..eek3/pyuvm_sync_fifo/main.py(79) [uvm_test_top.env.wr_mon]: 👀 [WrMonitor] 抓取到成功写入: 57
+  4710.00ns DEBUG    ..ek3/pyuvm_sync_fifo/main.py(134) [uvm_test_top.env.rd_mon]: 👀 [RdMonitor] 抓取到延迟一拍的新鲜数据: 231
+  4710.00ns INFO     ..ek3/pyuvm_sync_fifo/main.py(167) [uvm_test_top.env.scb]: 📦 [Scoreboard] 记录写入数据: 57，当前库存: [231, 56, 154, 57]
+  4710.00ns INFO     ..ek3/pyuvm_sync_fifo/main.py(178) [uvm_test_top.env.scb]: ✅ PASS: 成功读出预期数据 231
+  4730.00ns INFO     ..eek3/pyuvm_sync_fifo/main.py(59) [uvm_test_top.env.wr_drv]: 📤 [WrDriver] 发起写入: 224
+  4730.00ns INFO     ..eek3/pyuvm_sync_fifo/main.py(79) [uvm_test_top.env.wr_mon]: 👀 [WrMonitor] 抓取到成功写入: 224
+  4730.00ns DEBUG    ..ek3/pyuvm_sync_fifo/main.py(134) [uvm_test_top.env.rd_mon]: 👀 [RdMonitor] 抓取到延迟一拍的新鲜数据: 56
+  4730.00ns INFO     ..ek3/pyuvm_sync_fifo/main.py(167) [uvm_test_top.env.scb]: 📦 [Scoreboard] 记录写入数据: 224，当前库存: [56, 154, 57, 224]
+  4730.00ns INFO     ..ek3/pyuvm_sync_fifo/main.py(178) [uvm_test_top.env.scb]: ✅ PASS: 成功读出预期数据 56
+  4750.00ns DEBUG    ..ek3/pyuvm_sync_fifo/main.py(134) [uvm_test_top.env.rd_mon]: 👀 [RdMonitor] 抓取到延迟一拍的新鲜数据: 154
+  4750.00ns INFO     ..ek3/pyuvm_sync_fifo/main.py(178) [uvm_test_top.env.scb]: ✅ PASS: 成功读出预期数据 154
+  4770.00ns DEBUG    ..ek3/pyuvm_sync_fifo/main.py(134) [uvm_test_top.env.rd_mon]: 👀 [RdMonitor] 抓取到延迟一拍的新鲜数据: 57
+  4770.00ns INFO     ..ek3/pyuvm_sync_fifo/main.py(178) [uvm_test_top.env.scb]: ✅ PASS: 成功读出预期数据 57
+  4790.00ns DEBUG    ..ek3/pyuvm_sync_fifo/main.py(134) [uvm_test_top.env.rd_mon]: 👀 [RdMonitor] 抓取到延迟一拍的新鲜数据: 224
+  4790.00ns INFO     ..ek3/pyuvm_sync_fifo/main.py(178) [uvm_test_top.env.scb]: ✅ PASS: 成功读出预期数据 224
+  5020.00ns INFO     cocotb.regression                  main.test_case1 passed
+  5020.00ns INFO     cocotb.regression                  **************************************************************************************
+                                                        ** TEST                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        **************************************************************************************
+                                                        ** main.test_case0                PASS        3220.00           0.04      76633.94  **
+                                                        ** main.test_case1                PASS        1800.00           0.05      38558.07  **
+                                                        **************************************************************************************
+                                                        ** TESTS=2 PASS=2 FAIL=0 SKIP=0               5020.00           0.10      48840.33  **
+                                                        **************************************************************************************
 
 
