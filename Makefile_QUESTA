@@ -1,0 +1,29 @@
+# --- 核心修改：指定仿真器为 questa ---
+SIM = questa
+TOPLEVEL_LANG = verilog
+# ... 后面的保持不变 ...
+SIM = questa
+TOPLEVEL_LANG ?= verilog
+
+VERILOG_SOURCES += $(PWD)/sync_fifo.v
+TOPLEVEL = sync_fifo
+COCOTB_TEST_MODULES = main
+#TESTCASE = test_case1
+
+# 1. 编译阶段：告诉 vlog 插入覆盖率探针
+# b: branch(分支), c: condition(条件), e: expression(表达式), f: fsm(状态机), t: toggle(翻转)
+COMPILE_ARGS += +cover=bceft
+
+# 如果你的系统环境需要指定特定的编译参数，也可以加在这里
+# SIM_ARGS += ...
+SIM_ARGS += -voptargs="+cover=bceft" -coverage
+# ==============================================
+# Verdi 手动调用规则（默认不执行）
+# ==============================================
+
+
+# 引入 cocotb 仿真核心规则（必须放在最后）
+include $(shell cocotb-config --makefiles)/Makefile.sim
+
+verdi:
+	verdi -sv $(VERILOG_SOURCES) -ssf $(TOPLEVEL).fsdb &
