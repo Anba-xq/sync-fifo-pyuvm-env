@@ -32,3 +32,7 @@ make TESTCASE=test_case0
 
 # 运行读写并发压力测试，并开启覆盖率收集
 make TESTCASE=test_case1
+
+# 仿真结果
+<img width="1296" height="676" alt="image" src="https://github.com/user-attachments/assets/284ddefd-32a1-4abd-b312-65bc8ad1db9f" />
+
