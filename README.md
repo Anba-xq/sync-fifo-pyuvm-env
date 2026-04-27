@@ -13,8 +13,8 @@
 ## 📁 目录结构
 
 * `rtl/` : 同步 FIFO 的 Verilog 设计源码。
-* `tb/main.py` : PyUVM 验证环境的核心代码，包含 Transaction, Env, Testcases。
-* `tb/Makefile` : Cocotb 仿真控制脚本。
+* `main.py` : PyUVM 验证环境的核心代码，包含 Transaction, Env, Testcases。
+* `Makefile` : Cocotb 仿真控制脚本。
 
 ## 🚀 快速开始
 
@@ -24,7 +24,7 @@
 * 支持 VPI 接口的仿真器 (默认配置为 QuestaSim，也可切换为 VCS/Icarus)
 
 ### 运行仿真
-进入 `tb/` 目录，执行以下命令运行指定的测试用例：
+进入目录，执行以下命令运行指定的测试用例：
 
 ```bash
 # 运行基础读写测试
